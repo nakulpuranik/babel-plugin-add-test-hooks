@@ -1,8 +1,15 @@
-export default function ({ types: t }) {
+/* eslint no-unused-vars:0 */
+export default function() {
   return {
     visitor: {
-      Identifier(path, state) { },
-      ASTNodeTypeHere(path, state) { }
+      Identifier(path) {
+        const name = path.node.name;
+        // reverse the name: JavaScript -> tpircSavaJ
+        path.node.name = name
+          .split("")
+          .reverse()
+          .join("");
+      }
     }
   };
-};
+}
