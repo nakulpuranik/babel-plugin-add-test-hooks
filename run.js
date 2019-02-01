@@ -12,7 +12,9 @@ fs.readFile(fileName, function read(err, data) {
 
   var out = babel.transform(src,{
     plugins:[
-      "./src/RemoveDebugger.js"
+      "./src/plugins/RemoveDebugger.js",
+      "./src/plugins/ReverseJsxTags.js",
+      "@babel/plugin-syntax-jsx"
     ]
   });
   //print output to console
