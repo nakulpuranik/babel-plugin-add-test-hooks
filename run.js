@@ -13,7 +13,8 @@ fs.readFile(fileName, function read(err, data) {
   var out = babel.transform(src,{
     plugins:[
       "./src/plugins/RemoveDebugger.js",
-      "./src/plugins/ReverseJsxTags.js",
+      //"./src/plugins/ReverseJsxTags.js",
+      "./src/plugins/AddTestHooks.js",
       "@babel/plugin-syntax-jsx"
     ]
   });
